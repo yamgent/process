@@ -323,15 +323,13 @@ void method(param1,param2)throws Exception1,
   </tr>
 </table>
 
-- Here are three acceptable ways to format ternary expressions:
+- Here are two acceptable ways to format ternary expressions:
 
 ```java
 alpha = (aLongBooleanExpression) ? beta : gamma;
-alpha = (aLongBooleanExpression) ? beta
-                                 : gamma;
 alpha = (aLongBooleanExpression)
-      ? beta
-      : gamma;
+        ? beta
+        : gamma;
 ```
 
 - If the above rules lead to confusing code or to code that’s squished up against the right margin, just indent 8 spaces instead.
@@ -348,17 +346,8 @@ private static synchronized horkingLongMethodName(int arg, Object anotherArg,
         String yetAnotherArg, Object andStillAnother) {
     ...
 }</pre>
-    </td> 
-  <tr>
-  <tr>
-    <td>
-      <pre lang="java">
-//EVEN THIS IS ACCEPTABLE (2nd line starts to the right of method name)
-private static synchronized horkingLongMethodName(int arg, Object anotherArg,
-                                String yetAnotherArg, Object andStillAnother) {
-    ...
-}</pre>
-    </td> 
+    </td>
+  </tr>
   <tr>
     <th align="center">Bad</th>
   </tr>
@@ -369,6 +358,17 @@ void someMethodWithVeryVeryVeryVeryVeryVeryLongName(int arg,
                                                    Object anotherArg, 
                                                    String yetAnotherArg,
                                                    Object andStillAnother) {
+    ...
+}</pre>
+    </td>
+  </tr>
+  <tr>
+  <tr>
+    <td>
+      <pre lang="java">
+//INDENTING WITH METHOD NAME (too many indentation used)
+private static synchronized horkingLongMethodName(int arg, Object anotherArg,
+                                String yetAnotherArg, Object andStillAnother) {
     ...
 }</pre>
     </td>
@@ -907,11 +907,11 @@ In an international environment English is the preferred language.
  * Returns lateral location of the specified position.
  * If the position is unset, NaN is returned.
  *
- * @param x    X coordinate of position.
- * @param y    Y coordinate of position.
- * @param zone Zone of position.
- * @return     Lateral location.
- * @throws IllegalArgumentException  If zone is <= 0.
+ * @param x coordinate of position.
+ * @param y coordinate of position.
+ * @param zone of position.
+ * @return lateral location.
+ * @throws IllegalArgumentException if zone is <= 0.
  */
 public double computeLocation(double x, double y, int zone)
     throws IllegalArgumentException {
